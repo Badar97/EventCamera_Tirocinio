@@ -6,14 +6,6 @@ This repository contains the code and documentation for my Bachelor's thesis pro
 
 ---
 
-# 👁️‍🗨️ Event-Based Face Tracking – Bachelor's Thesis
-
-This repository contains the code and documentation developed for my **Bachelor’s thesis in Computer and Automation Engineering** at Università Politecnica delle Marche (UNIVPM), academic year **2020/2021**.
-
-> The project focuses on **face tracking using event-based vision**, combining asynchronous events and traditional frames from Dynamic Vision Sensors (DVS).
-
----
-
 ## 🎯 Objectives
 
 - Develop an algorithm to track human faces using data from **event-based cameras**.
@@ -71,8 +63,6 @@ This repository contains the code and documentation developed for my **Bachelor�
    ```bash
    python faceProcessing.py
 >Note: This project may require the dv-python library from iniVation to handle DVS data streams.
-
-Per iniziare, andare su: https://gitlab.com/inivation/dv/dv-python e seguire la procedura
 
 ## 📘 Thesis
 You can find the full thesis report (in Italian) here:
