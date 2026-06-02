@@ -1,34 +1,46 @@
-# Development of an algorithm to track faces using events and frames from DVS cameras.
+# Face Tracking with Event-Based Vision and DVS Cameras
 
 This repository contains the code and documentation for my Bachelor's thesis project in Computer and Automation Engineering at Università Politecnica delle Marche (UNIVPM), academic year 2020/2021.
 
-> The project focuses on **face tracking using event-based vision**, combining asynchronous events and traditional frames from Dynamic Vision Sensors (DVS).
+The project focuses on face tracking using event-based vision, combining asynchronous events and traditional frames from Dynamic Vision Sensors (DVS).
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
-- Develop an algorithm to track human faces using data from **event-based cameras**.
-- Combine **event streams** and **frame data** to improve accuracy and robustness.
-- Explore the use of **facial mesh tracking** (eyes, lips, face) from DVS input.
+- Develop an algorithm to track human faces using data from event-based cameras.
+- Combine event streams and frame data to improve accuracy and robustness.
+- Explore facial mesh tracking for eyes, lips, and face landmarks from DVS input.
 - Demonstrate real-time applicability in dynamic or low-light conditions.
 
 ---
 
-## 🧠 Main Features
+## Main Features
 
-- 🔄 **Hybrid data processing**: event and frame-based
-- 🧩 Modular scripts for each face part:
+- Hybrid processing of event-based and frame-based data
+- Modular scripts for each face area:
   - Eyes (`eyeProcessing.py`)
   - Lips (`lipsProcessing.py`)
   - Face (`faceProcessing.py`)
   - Combined face mesh (`totProcessing.py`)
-- 📊 Support for **mesh visualization**
-- ⚙️ Reusable utility functions (`utilities/`)
+- Face landmark extraction and mesh visualization with MediaPipe and OpenCV
+- Motion analysis through velocity and direction calculation on facial keypoints
+- Reusable utility functions for JSON parsing, landmark selection, filtering, and plotting
 
 ---
 
-## 🗂️ Project Structure
+## Technologies
+
+- Python
+- OpenCV
+- MediaPipe
+- NumPy
+- Matplotlib
+- DVS / event-camera data processing
+
+---
+
+## Project Structure
 
 ```zsh 
     EventCamera_Tirocinio/
@@ -48,23 +60,35 @@ This repository contains the code and documentation for my Bachelor's thesis pro
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Badar97/EventCamera_Tirocinio.git
    cd EventCamera_Tirocinio
+   ```
 
-2. **Install dependencies** (create a virtual environment if needed):
+2. **Create a virtual environment**:
    ```bash
-   pip install -r requirements.txt
-   
-3. **Run one of the main scripts**, for example:
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. **Install the main dependencies used by the scripts**:
+   ```bash
+   pip install numpy matplotlib opencv-python mediapipe
+   ```
+
+   Some scripts may also require the `dv` Python bindings from iniVation to read DVS/AEDAT data streams.
+
+4. **Run one of the main scripts**, for example:
    ```bash
    python faceProcessing.py
->Note: This project may require the dv-python library from iniVation to handle DVS data streams.
+   ```
 
-## 📘 Thesis
+> Note: The original thesis workflow depends on DVS recordings and JSON files produced during the experimental setup.
+
+## Thesis
 You can find the full thesis report (in Italian) here:
 - Tesi_Ali_Waqar_Badar.pdf
 
@@ -79,5 +103,4 @@ It includes:
 ## Authors
 - [Ali Waqar Badar](https://github.com/Badar97)
 
->📌 This project was developed for academic research and educational purposes.
-
+> This project was developed for academic research and educational purposes.
